@@ -2,6 +2,7 @@ import type {
   PropsWithChildren,
   //   ReactNode
 } from "react";
+import type { CourseGoal } from "../types/goals";
 
 // type GoalsProps = {
 //   title: string;
@@ -12,13 +13,9 @@ import type {
 
 // -------or-------
 
-type GoalsProps = PropsWithChildren<{
-  title: string;
-  description: string;
-  id: number | string;
-}>;
+type GoalsProps = PropsWithChildren<CourseGoal>;
 
-export default function CourseGoals({
+export default function CourseGoalCard({
   title,
   description,
   children,
