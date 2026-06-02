@@ -1,7 +1,7 @@
 import type { CourseGoal } from "../types/goals";
 import CourseGoalCard from "./CourseGoalCard";
 
-export default function CourseGoalsList({ goals }: { goals: CourseGoal[] }) {
+export default function CourseGoalsList({ goals, onDelete }: { goals: CourseGoal[], onDelete: (id: number | string) => void }) {
   return (
     <ul>
       {goals.length !== 0 ? (
@@ -11,6 +11,7 @@ export default function CourseGoalsList({ goals }: { goals: CourseGoal[] }) {
               title={goal.title}
               description={goal.description}
               id={goal.id}
+              onDelete={onDelete}
             ></CourseGoalCard>
           </li>
         ))

@@ -19,6 +19,8 @@ export default function CourseGoalCard({
   title,
   description,
   children,
+  id,
+  onDelete,
 }: GoalsProps) {
   return (
     <article>
@@ -27,7 +29,7 @@ export default function CourseGoalCard({
         <p>{description}</p>
       </div>
       <div>
-        <button>delete</button>
+        <button onClick={() => onDelete(id)}>delete</button>
       </div>
       {children}
     </article>
