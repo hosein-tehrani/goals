@@ -12,8 +12,9 @@ import type { CourseGoal } from "../types/goals";
 // };
 
 // -------or-------
-
-type GoalsProps = PropsWithChildren<CourseGoal>;
+type GoalCardProps = CourseGoal & {
+  onDelete: (id: number | string) => void;
+};
 
 export default function CourseGoalCard({
   title,
@@ -21,7 +22,7 @@ export default function CourseGoalCard({
   children,
   id,
   onDelete,
-}: GoalsProps) {
+}: PropsWithChildren<GoalCardProps>) {
   return (
     <article>
       <div>
